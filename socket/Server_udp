@@ -1,0 +1,11 @@
+## -*- coding: utf-8 -*-
+import socket
+
+soc = socket.socket(socket.AF_INET,socket.SOCK_DGRAM);
+soc.bind(("127.0.0.1",8888))
+print "正在等待客户端链接。。。"
+#阻塞方法
+data = soc.recv(1024)
+#非阻塞方法
+soc.sendto("这是一条来自服务器的数据。。。",("127.0.0.1",9999))
+print data

@@ -1,1 +1,15 @@
-print 'fff'
+## -*- coding: utf-8 -*-
+import socket
+
+soc = socket.socket();
+soc.bind(("127.0.0.1",8888))
+#最大链接数
+soc.listen(5)
+print "正在等待客户端链接。。。"
+conn,address = soc.accept()
+conn.send("这是一条来自服务器的数据。。。")
+data = conn.recv(1024)
+print data
+while True:
+    msg = input("请输入服务器端消息")
+#conn.close()

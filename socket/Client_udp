@@ -1,0 +1,7 @@
+## -*- coding: utf-8 -*-
+import socket
+
+soc = socket.socket(socket.AF_INET,socket.SOCK_DGRAM);
+soc.bind(("127.0.0.1",9999))
+soc.sendto("又我来给服务器一个赞吧",("127.0.0.1",8888))
+print soc.recv(1024)
