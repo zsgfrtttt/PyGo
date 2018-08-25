@@ -1,0 +1,28 @@
+## -*- coding: utf-8 -*-
+## -*- coding: utf-8 -*-
+import socket
+
+soc = socket.socket();
+soc.connect(("127.0.0.1",8888))
+data = soc.recv(1024)
+soc.send("客户端发来贺电。。")
+print data
+
+## -*- coding: utf-8 -*-
+import socket
+
+soc = socket.socket();
+soc.connect(("127.0.0.1",8888))
+data = soc.recv(1024)
+soc.send("客户端发来贺电。。")
+print data
+
+## -*- coding: utf-8 -*-
+import socket
+
+soc = socket.socket();
+soc.connect(("127.0.0.1",8888))
+data = soc.recv(1024)
+soc.send("客户端发来贺电。。")
+print data
+

@@ -1,0 +1,11 @@
+## -*- coding: utf-8 -*-
+import socket
+
+soc = socket.socket();
+soc.connect(("127.0.0.1",8888))
+print "准备发送文件"
+with open("ClientSocket",'rb') as file:
+    for i in file:
+        soc.send(i);
+    soc.send('quit'.encode())
+print '发送完毕'

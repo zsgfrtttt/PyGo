@@ -1,0 +1,17 @@
+## -*- coding: utf-8 -*-
+import socket
+
+soc = socket.socket();
+soc.bind(("127.0.0.1",8888))
+print "正在等待客户端链接。。。"
+soc.listen(5)
+
+conn,address = soc.accept()
+with open('file','ab') as f:
+    while True:
+        data = conn.recv(1000)
+        if data == 'quit'.encode():
+            break
+        f.write(data)
+soc.close()
+print "接受完毕"
